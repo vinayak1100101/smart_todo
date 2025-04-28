@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    TOdo list
+    {% for i in res %}
+    {{i.title}},{{i.date}},{{i.srn}}
+    <a href="/delete/{{i.srn}}">delete</a>
+    <a href="/edit/{{i.srn}}">edit</a>
+    <br>
+    {%endfor%}
+    <form method="post">
+        {%csrf_token%}
+        <input type="text" placeholder="titlle" name="title">
+        
+        <input type="submit" value="add">
+    </form>
+    
+</body>
+</html>
